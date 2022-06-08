@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinApp.TicTacToePage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Image
+            x:Name="img1"
+            ClassId="3x3_images"
+            Source="blank.png"
+            Grid.Column="0"
+            Grid.Row="0">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="SetMark"/>
+            </Image.GestureRecognizers>
+        </Image>
+        <Image
+            x:Name="img2"
+            ClassId="3x3_images"
+            Source="blank.png"
+            Grid.Column="1"
+            Grid.Row="0">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="SetMark"/>
+            </Image.GestureRecognizers>
+        </Image>
+        <Image
+            x:Name="img3"
+            ClassId="3x3_images"
+            Source="blank.png"
+            Grid.Column="2"
+            Grid.Row="0">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="SetMark"/>
+            </Image.GestureRecognizers>
+        </Image>
+        <Image
+            x:Name="img4"
+            ClassId="3x3_images"
+            Source="blank.png"
+            Grid.Column="0"
+            Grid.Row="1">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="SetMark"/>
+            </Image.GestureRecognizers>
+        </Image>
+        <Image
+            x:Name="img5"
+            ClassId="3x3_images"
+            Source="blank.png"
+            Grid.Column="1"
+            Grid.Row="1">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="SetMark"/>
+            </Image.GestureRecognizers>
+        </Image>
+        <Image
+            x:Name="img6"
+            ClassId="3x3_images"
+            Source="blank.png"
+            Grid.Column="2"
+            Grid.Row="1">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="SetMark"/>
+            </Image.GestureRecognizers>
+        </Image>
+        <Image
+            x:Name="img7"
+            ClassId="3x3_images"
+            Source="blank.png"
+            Grid.Column="0"
+            Grid.Row="2">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="SetMark"/>
+            </Image.GestureRecognizers>
+        </Image>
+        <Image
+            x:Name="img8"
+            ClassId="3x3_images"
+            Source="blank.png"
+            Grid.Column="1"
+            Grid.Row="2">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="SetMark"/>
+            </Image.GestureRecognizers>
+        </Image>
+        <Image
+            x:Name="img9"
+            ClassId="3x3_images"
+            Source="blank.png"
+            Grid.Column="2"
+            Grid.Row="2">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="SetMark"/>
+            </Image.GestureRecognizers>
+        </Image>
+        <StackLayout Grid.Row="3" Grid.ColumnSpan="3" IsClippedToBounds="True"  Padding="20">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Label
+                        Text="Сначала"
+                        Grid.Row="0"
+                        HorizontalTextAlignment="Center"
+                        VerticalTextAlignment="Center"/>
+                
+                        
+                <Image
+                    Source="reset.png"
+                    Grid.Column="0"
+                    WidthRequest="85"
+                    HeightRequest="85"
+                    VerticalOptions="EndAndExpand"
+                    HorizontalOptions="CenterAndExpand">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="ResetButton"/>
+                    </Image.GestureRecognizers>
+
+                </Image>
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <Label
+                        Text="Выбрать метку"
+                        Grid.Row="0"
+                        Padding="15"
+                        HorizontalTextAlignment="Center"
+                        VerticalTextAlignment="End"/>
+                    <Image 
+                        Source="X.png"
+                        x:Name="playerturn"
+                        Grid.Row="1"
+                        WidthRequest="85"
+                        HeightRequest="85"
+                        VerticalOptions="Start"
+                        HorizontalOptions="CenterAndExpand">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="ChangeYourMark"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Grid>
+                <Button 
+                    Text="2 игрока"
+                    Grid.Column="2"
+                    WidthRequest="90"
+                    HeightRequest="90"
+                    VerticalOptions="EndAndExpand"
+                    HorizontalOptions="CenterAndExpand"
+                    Clicked="NumPlayersButton"/>
+                <Button 
+                    Text="Правила"
+                    Grid.Column="3"
+                    WidthRequest="90"
+                    HeightRequest="90"
+                    VerticalOptions="EndAndExpand"
+                    HorizontalOptions="CenterAndExpand"
+                    Clicked="RulesButton"/>
+            </Grid>
+        </StackLayout>
+    </Grid>
+</ContentPage>
